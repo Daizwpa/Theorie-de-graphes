@@ -12,7 +12,6 @@
 
     /* prototypes */
     Arc** GitGraphe();
-
     
 
 

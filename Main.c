@@ -5,6 +5,7 @@
  * Date of create : 18-mar-19
  */
 #include "Constant.h"
+#include "insert.h"
 void main() {
     /* delcarations */
     bool view = false;
@@ -12,11 +13,12 @@ void main() {
     Arc **Graphe = NULL;
 
     /* code */
-    printf("<------------[ Theorie de graphes ]------------>")
+    printf("<------------[ Theorie de graphes ]------------>");
     while(!view){
         /* menu */
         printf("\n1- siser Graphe.");
-        printf("\n2- La recherche des composantes connexes:")
+        printf("\n2- La recherche des composantes connexes:");
+        printf("\nQu'aimez-vous : ");
 
         /* select */
         scanf("%d", &x);
@@ -25,7 +27,7 @@ void main() {
         case 1:
             /* Git Graphe */
             Graphe = GitGraphe();  
-            break
+            break;
     
         case 2:
             /* La recherche des composantes connexes */
