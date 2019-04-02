@@ -21,11 +21,11 @@ Arc** GitGraphe(){
         scanf("%d", &nbSommet);
         if(nbSommet <= 0){
             printf("\nError!!!");
-            printf("\nEssayez encore...\n");
+            printf("\nEssayez encore...");
             good = true;
 
         }else{
-            printf("\nBien!!!");
+            printf("Bien!!!");
             good = false;
         }
 
@@ -50,7 +50,7 @@ Arc** GitGraphe(){
         switch(x){
         case 1:
             if(addArc(Graphe, nbSommet)){
-                printf("\nError!!!");
+                printf("Error!!!");
             }
 
             break;
@@ -95,16 +95,17 @@ int addArc(Arc **Graphe, int nbs){
     int ei, et;
     int x; // for get value arc
 
-    printf("\nExtremite initiale: ");
+    printf("Extremite initiale: ");
     scanf("%d", &ei);
 
-    printf("\nExtermite terminale: ");
+    printf("Extermite terminale: ");
     scanf("%d", &et);
 
-    printf("\nAjoute value : ");
+    printf("Ajoute value : ");
     scanf("%d", &x);
 
-    if((ei<0&& ei>=nbs)||(et<0&& et>=nbs) ){ return 1;}
+    if( (ei<0 || ei>=nbs) || (et<0 || et>=nbs) ){ return 1;}
+
     Graphe[ei][et].value = x;
 
     return 0;
