@@ -9,9 +9,12 @@
 #define DEF_INS
     /* include file */
     #include "Constant.h"
+    #include "drew.h"
 
     /* prototypes */
     Arc** GitGraphe();
+    Arc** createTable(int width, int lenght);
+    int   addArc(Arc **Graphe, int nbs);
     
 
 
