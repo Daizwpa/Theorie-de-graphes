@@ -12,9 +12,10 @@
     #include "drew.h"
 
     /* prototypes */
-    Arc** GitGraphe();
+    Status* GitGraphe();
     Arc** createTable(int width, int lenght);
     int   addArc(Arc **Graphe, int nbs);
+    
     
 
 

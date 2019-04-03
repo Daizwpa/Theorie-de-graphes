@@ -7,19 +7,25 @@
 #include "insert.h"
 
 
-Arc** GitGraphe(){
+Status* GitGraphe(){
     /* read the Graphe and return " La matrice associée " */
     
     /*initialize*/
     bool done = false, good = false;
-    int  nbSommet = 0;
     int x;
-    Arc **Graphe = NULL;
+    Status *staG = NULL;
+
+    /* create table status */
+    staG = (Status*) malloc(sizeof(Status));
+    if (staG == NULL) {
+        exit(EXIT_FAILURE);
+    }
+    
 
     do{/* git number sommet and check value */
         printf("Quel est le nombre sommets: ");
-        scanf("%d", &nbSommet);
-        if(nbSommet <= 0){
+        scanf("%d", &(staG->NbSommet));// hahahaha you can write &staG->NbSommet
+        if(staG->NbSommet <= 0){
             printf("\nError!!!");
             printf("\nEssayez encore...");
             good = true;
@@ -32,15 +38,15 @@ Arc** GitGraphe(){
     }while(good);
 
     /* Create Table */
-    Graphe = createTable(nbSommet, nbSommet);
-    if (Graphe == NULL){
+    staG->Graphe = createTable(staG->NbSommet, staG->NbSommet);
+    if (staG->Graphe == NULL){
         printf("\nMemory Error!!");
         exit(EXIT_FAILURE);
     }
 
     /* menu switch */
     while(!done){
-        DrewGraphe(Graphe, nbSommet);
+        DrewGraphe(staG->Graphe, staG->NbSommet);
         printf("\n1- Ajouter nouvelle Arc.");
         printf("\n2- Exit.");
         printf("\nQu'aimez-vous: ");
@@ -49,7 +55,7 @@ Arc** GitGraphe(){
 
         switch(x){
         case 1:
-            if(addArc(Graphe, nbSommet)){
+            if(addArc(staG->Graphe, staG->NbSommet)){
                 printf("Error!!!");
             }
 
@@ -58,15 +64,16 @@ Arc** GitGraphe(){
             done = true;
             break;
 
-            break;
         default:
 
             break;
         }//end switch
 
     }//end while
+    staG->fconnexe = false;
+    staG->connexe = false;
 
-    return Graphe;
+    return staG;
 
 }// end GitGraphe()
 

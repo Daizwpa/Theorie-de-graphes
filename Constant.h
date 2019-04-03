@@ -16,6 +16,17 @@
     typedef struct{
         int value;
     }Arc;
+    
+    typedef struct{
+        Arc **Graphe;
+        int NbSommet;
+        bool connexe;
+        bool fconnexe;
+    }Status;
+
+    
+
+    
 
 
 
