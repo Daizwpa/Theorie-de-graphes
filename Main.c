@@ -18,6 +18,7 @@ void main() {
         /* menu */
         printf("\n1- siser Graphe.");
         printf("\n2- La recherche des composantes connexes:");
+        printf("\n0- exit.");
         printf("\nQu'aimez-vous : ");
 
         /* select */
@@ -34,9 +35,13 @@ void main() {
             if (Graphe != NULL){
 
             }else{
-                printf("\nError !!!\n pas trouvé Graphe");
+                printf("Error !!!\n pas trouvé Graphe");
             }
             
+            break;
+            
+        case 0:
+            view = true;
             break;
 
         default :
