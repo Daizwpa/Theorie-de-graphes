@@ -118,3 +118,13 @@ int addArc(Arc **Graphe, int nbs){
     return 0;
 
 }// addArc()
+
+void freeGraphe(Arc **Graphe, int size){
+    /* remove Grahpe */
+    void *currnet;
+    for(int i = 0; i<size; i++){
+        currnet = Graphe[i];
+        free(currnet );
+    }
+    free(Graphe);
+}//end freeGraphe()

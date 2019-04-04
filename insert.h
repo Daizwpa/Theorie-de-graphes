@@ -15,6 +15,7 @@
     Status* GitGraphe();
     Arc** createTable(int width, int lenght);
     int   addArc(Arc **Graphe, int nbs);
+    void freeGraphe(Arc **Graphe, int size);
     
     
 

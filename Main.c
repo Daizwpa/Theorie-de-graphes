@@ -35,10 +35,15 @@ void main() {
         case 2:
             if (staG != NULL){
               staG->connexe =  isConnexe(staG);
-
+              if(staG->connexe){
+                  printf("Graphe est connexte");
+              }else
+              {
+                  printf("Graphe est Non connexte");
+              }
                 
             }else{
-                printf("Error !!!\n pas trouvé Graphe");
+                printf("Error !!!\npas trouve Graphe");
             }
 
             break;

@@ -8,6 +8,8 @@
 #define DEF_SEAR
     /* include file */
     #include "Constant.h"
+    #include "conver.h"
+    #include "insert.h"
 
     /* prototypes */
     bool isConnexe(Status *staG);
